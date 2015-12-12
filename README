@@ -1,0 +1,13 @@
+# Pour charger les dépendances :
+$ ./deploy.sh
+
+#Pour rentrer dans l'en virtuel :
+$ source bin/activate
+
+# Pour initialiser la bdd, les tables et les données initiales :
+$ ./manage.py initdb
+
+# Pour lancer le serveur :
+$ ./manage.py runserver
+
+$ xdg-open http://localhost:5000/

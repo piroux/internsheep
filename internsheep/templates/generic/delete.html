@@ -1,0 +1,14 @@
+{% extends "generic/base.html" %}
+
+
+{% block content_action %}
+
+<h2>{{ objname.title() }} (<small>Suppression</small>)</h2>
+
+<div class="jumbotron center-block">
+  <h3>Confirmation</h3>
+  <p>Supprimer définitivement ?</p>
+  <p><a class="btn btn-primary btn-lg" href="{{ delete_url }}?confirm=yes" role="button">Supprimer</a></p>
+</div>
+
+{% endblock %}

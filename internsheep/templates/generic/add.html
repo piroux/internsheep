@@ -1,0 +1,17 @@
+{% extends "generic/base.html" %}
+
+
+{% block content_action %}
+
+{# if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif #}
+
+<div class="jumbotron">
+    <h2>{{ objname.title() }} (<small>{{ action }}</small>)</h2>
+    <p>{{ action.title() }} d'un objet {{ objname }}</p>
+</div>
+
+<div class="col-md-12">
+    {{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}
