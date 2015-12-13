@@ -7,6 +7,7 @@ from collections import OrderedDict
 
 from ..geo.models import *
 
+
 def sanitize_fetched_data(l):
     lout = []
     for d in l:

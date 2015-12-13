@@ -1,8 +1,9 @@
-# Pour charger les dépendances :
-$ ./deploy.sh
 
-#Pour rentrer dans l'en virtuel :
-$ source bin/activate
+
+This project needs Postgresql to be installed.
+
+#Pour rentrer dans l'env virtuel :
+$ source internsheep_env/bin/activate
 
 # Pour initialiser la bdd, les tables et les données initiales :
 $ ./manage.py initdb
@@ -10,4 +11,9 @@ $ ./manage.py initdb
 # Pour lancer le serveur :
 $ ./manage.py runserver
 
-$ xdg-open http://localhost:5000/
+# The server is now live at http://localhost:5000/
+
+
+
+# To reset the virtual env :
+$ ./deploy.sh

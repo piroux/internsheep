@@ -1,15 +1,14 @@
 #!/bin/bash
 
+rm -rf internsheep_env/
+find -name '*.pyc' -delete
+
 set -o errexit
 
-virtualenv .
+virtualenv internsheep_env
 
-source bin/activate
+source internsheep_env/bin/activate
 
 pip install -r requirements.txt
 
-echo "Postgresql need to be installed ..."
-echo "Ready ? Now run:"
-echo
-echo "python manage.py initdb"
-echo "python manage.py runserver"
+cat README

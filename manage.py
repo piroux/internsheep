@@ -1,27 +1,24 @@
 #!/usr/bin/env python
+# -*- encoding: utf-8 -*-
 
-import os
-import subprocess
-
-from internsheep import app, init_db, load_db
+from internsheep import app, database
+from internsheep.database import create_db, init_db, load_db
 from flask.ext.script import Manager, Shell
 
 
 manager = Manager(app)
 
 def make_shell_context():
-    #return dict(app=app, db=db, User=User, Note=Note, Role=Role, Tag=Tag, Notebook=Notebook)
-    return dict(app=app)
+    return dict(app=app, database=database)
 manager.add_command("shell", Shell(make_context=make_shell_context))
 
 @manager.command
 def initdb():
     """ Initialize la BDD, si besoin en effacant tout."""
-    p = subprocess.Popen(['bash', 'internsheep/create_db.sh'])
-    p.communicate()
+    create_db()
     init_db()
     load_db()
-    print 'Base de donnees initialisee: OK'
+    print 'Base de donnees initialisée: OK'
 
 @manager.command
 def profile(length=25, profile_dir=None):

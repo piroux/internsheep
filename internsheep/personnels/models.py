@@ -9,6 +9,7 @@ from ..geo.models import *
 from ..organisations.models import *
 from ..stages.models import *
 
+
 def sanitize_fetched_data(l):
     lout = []
     for d in l:

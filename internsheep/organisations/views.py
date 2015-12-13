@@ -6,12 +6,11 @@ from flask.ext.wtf import Form
 from flask.ext.classy import FlaskView, route
 from wtforms import fields, validators, widgets
 
-from . import organisations_bp
-
-from . import models
-
+from ..database import models
 from ..base.views import InternsheepView, flash_errors
 
+
+organisations_bp = Blueprint('organisations', __name__, template_folder='organisations')
 
 ################################################################################
 # Entreprises
@@ -43,7 +42,7 @@ class EntrepriseView(InternsheepView):
     object_model = models
 
     choices_handler = {
-        'secteurs': lambda self: [(secteur['secteur_id'], secteur['nom_secteur']) for secteur in self.object_model.list_secteurs()]
+        'secteurs': lambda self: [(secteur['secteur_id'], secteur['nom_secteur']) for secteur in models.list_secteurs()]
     }
 
     #@route('/add', methods=['GET', 'POST'])

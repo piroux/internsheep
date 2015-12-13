@@ -3,7 +3,8 @@
 from flask import Blueprint, current_app, request, session, g, redirect, url_for, \
      abort, render_template, flash
 
-from . import main_bp
+
+main_bp = Blueprint('main', __name__)
 
 
 @main_bp.route('/')
