@@ -1,9 +1,10 @@
 
 # Internsheep Project
 
-Ce projet requiert d'avoir déjà installé PostgreSQL.
+<img src="media/project_picture.jpg" alt="Sheep your internsheep" width="200">
 
-![Sheep your internsheep](media/project_picture.jpg)
+
+Ce projet requiert d'avoir déjà installé PostgreSQL.
 
 Pour rentrer dans l'env virtuel :
 ```bash
